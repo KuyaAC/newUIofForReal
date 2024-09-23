@@ -27,7 +27,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>For Real?</title>
     </head>
-    <body>
+    <div>
         <div class="background-container">
             <div class="inputContainer">
                 <div class="container" id="animatedContainer">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Animation loading shits -->
+                        <!-- Animation loading -->
                         <div id="loading" class="loading" style="display: none">
                             <div class="loader">
                                 <div class="bar1"></div>
@@ -74,202 +74,59 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- UPDATE: ADD FB Links -->
-            <!-- <button id="info-button">i</button> -->
-            <div id="info-popup">
-                <!-- <p>
-                    For Real?: A Hybrid Approach to Audio Deepfake Detection in
-                    Noisy Real-World Environments
-                </p>
-                <p class="authors">
-                    <a
-                        href="https://www.facebook.com/allencarl.delasalas/"
-                        target="_blank"
-                        >Delas Alas</a
-                    >
-                    |
-                    <a href="https://www.facebook.com/einahji" target="_blank"
-                        >Iraga</a
-                    >
-                    |
-                    <a href="https://www.facebook.com/CJPaRoChA" target="_blank"
-                        >Parocha</a
-                    >
-                    |
-                    <a
-                        href="https://www.facebook.com/hyejooooooooo"
-                        target="_blank"
-                        >San Jose</a
-                    >
-                </p> -->
-            </div>
-            <!------------------------------------------------------------------------------ ADDITION: MODEL PICKER PART ----------------------------------------------->
-            <!-- <div class="fixed-top-right">
-                <div class="dropdown">
-                    <h1 class="ModelTitle">
-                        <span class="highlight">Choose a Model:</span>
-                    </h1>
-                    <ul>
-                        <li><b>Base Model </b> by the internet</li>
-                        <li><b>For Real Model</b> by Team 11</li>
-                    </ul>
+                <div class="containerP" id="animatedContainerP" style="display: none;">
+                    <div class="dot1"></div>
+                    <div class="light-beam"></div>
+                    <div class="predict-box">
+                        <div class="predict-section">
+                            <div class="contentP">
+                                <div class="box">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> -->
+            </div>
         </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const container = document.getElementById("animatedContainer");
-                const fileInput = document.getElementById("file-input");
-                const fileInfo = document.getElementById("file-info");
-                const fileNameDisplay = document.getElementById("file-name");
+    </body>
+     <script>
 
-                // Handle file upload
-                window.handleFileUpload = (files) => {
-                    if (files.length > 0) {
-                        const fileName = files[0].name;
-                        fileNameDisplay.textContent = fileName;
-                        fileInfo.style.display = "block"; // Show the file name display
+        document.addEventListener("DOMContentLoaded", () => {
+          const container = document.getElementById("animatedContainer");
+          const containerP = document.getElementById("animatedContainerP");
+          const fileInput = document.getElementById("file-input");
+          const fileInfo = document.getElementById("file-info");
+          const fileNameDisplay = document.getElementById("file-name");
 
-                        // Trigger the pull-up animation
-                        container.classList.add("pull-up");
+          // Handle file upload
+          window.handleFileUpload = (files) => {
+            if (files.length > 0) {
+              const fileName = files[0].name;
+              fileNameDisplay.textContent = fileName;
+              fileInfo.style.display = "block"; // Show the file name display
 
-                        // Optionally remove the container after the animation ends
-                        container.addEventListener("animationend", () => {
-                            container.remove();
-                        });
-                    }
-                };
-            });
-            // ito yung script para sa upload ng audio
-            // function handleFileUpload(files) {
-            //     if (files.length > 0) {
-            //         const file = files[0];
+              // Trigger the pull-up animation
+              container.classList.add("pull-up");
 
-            //         // Display the selected file name
-            //         document.getElementById("file-name").textContent = file.name;
+              // Add animationend listener
+              container.addEventListener("animationend", () => {
+                container.remove(); // Remove container after animation ends
 
-            //         // Show file info and hide the upload image button
-            //         document.getElementById("file-info").style.display = "block";
-
-            //         // Hide the upload image
-            //         document.getElementById("upload-button").style.display = "none";
-
-            //         // Show the predict button
-            //         document.getElementById("predict-button").style.display = "inline-block";
-            //     }
-            // }
-
-            // ito yung pag clear ng file if na miss click lang yung audio file
-            function clearFile() {
-                document.getElementById("file-input").value = "";
-                document.getElementById("file-info").style.display = "none";
-                document.getElementById("upload-button").style.display =
-                    "inline-block";
-                document.getElementById("predict-button").style.display =
-                    "none";
+                // Delay showing containerP by 1.5 seconds
+                setTimeout(() => {
+                  containerP.style.display = "block"; // Show the containerP
+                  containerP.classList.add("show"); // Trigger the show animation
+                }, 100); // 1.5 second delay
+              });
             }
-            // ito naman yung predict button pwede mo to laruin para mag connect sa model na pag na click to mag rurun yung model
-            function predict() {
-                document.getElementById("upload-section").style.display =
-                    "none";
-                document.getElementById("prediction-result").style.display =
-                    "block";
-            }
+          };
 
-            function resetPage() {
-                document.getElementById("file-input").value = "";
-                document.getElementById("file-info").style.display = "none";
-                document.getElementById("predict-button").style.display =
-                    "none";
-                document.getElementById("prediction-result").style.display =
-                    "none";
-                document.getElementById("upload-section").style.display =
-                    "block";
-                document.getElementById("upload-button").style.display =
-                    "inline-block";
-            }
-            // UPDATED: Add more info
-            const infoButton = document.getElementById("info-button");
-            const infoPopup = document.getElementById("info-popup");
-            const moreInfoBtn = document.getElementById("moreInfo-btn");
-            const mInfoPop = document.getElementById("mInfoPop");
-            const closeButtons = document.querySelectorAll(".close-btn");
+          // Add event listener to the file input
+          fileInput.addEventListener("change", () => {
+            handleFileUpload(fileInput.files);
+          });
+        });
 
-            // Create a new div for the blur overlay
-            const blurOverlay = document.createElement("div");
-            blurOverlay.classList.add("blur-overlay");
-            document.body.appendChild(blurOverlay);
-
-            function toggleVisibility(element) {
-                if (
-                    element.style.display === "none" ||
-                    element.style.display === ""
-                ) {
-                    element.style.display = "block";
-                    blurOverlay.style.display = "block"; // Show blur overlay
-                } else {
-                    element.style.display = "none";
-                    blurOverlay.style.display = "none"; // Hide blur overlay
-                }
-            }
-
-            infoButton.addEventListener("click", () =>
-                toggleVisibility(infoPopup),
-            );
-            moreInfoBtn.addEventListener("click", () =>
-                toggleVisibility(mInfoPop),
-            );
-
-            closeButtons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const popup = button.closest(".popup");
-                    if (popup) {
-                        popup.style.display = "none";
-                        blurOverlay.style.display = "none"; // Hide blur overlay
-                    }
-                });
-            });
-
-            // Close popup when clicking on blur overlay
-            blurOverlay.addEventListener("click", () => {
-                infoPopup.style.display = "none";
-                mInfoPop.style.display = "none";
-                blurOverlay.style.display = "none";
-            });
-
-            // ito yung loading shits para may konting dating habang na loload yung model ng prediction nya
-            function predict() {
-                // Show loading animation
-                document.getElementById("loading").style.display = "block";
-                document.getElementById("upload-section").style.display =
-                    "none";
-
-                // Simulate prediction process (replace with actual prediction logic)
-                setTimeout(function () {
-                    // Hide loading animation
-                    document.getElementById("loading").style.display = "none";
-
-                    // Show prediction result
-                    document.getElementById("prediction-result").style.display =
-                        "block";
-                }, 2000); // Adjust the timeout duration as needed
-            }
-            // ADDITION: SCRIPT of MODEL picker
-            $(document).ready(function () {
-                $(".dropdown ul li").click(function () {
-                    $(".dropdown ul li").each(function () {
-                        if ($(this).hasClass("selected")) {
-                            $(this).removeClass("selected");
-                        }
-                    });
-                    $(this).addClass("selected");
-                    $(".dropdown h1")
-                        .html($(this).html())
-                        .removeClass()
-                        .addClass("selected-" + ($(this).index() + 1));
-                });
-            });
         </script>
     </body>
 </html>
