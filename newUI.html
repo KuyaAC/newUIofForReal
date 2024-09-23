@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="newUI.css" />
+        <link
+            href="https://db.onlinewebfonts.com/c/b726729b4c955cc38d78cfea835f7d98?family=CF+Anarchy+Regular"
+            rel="stylesheet"
+        />
+        <link
+            href="https://db.onlinewebfonts.com/c/982eef02eaef7b6dc99e02380f2c201c?family=Diediedie"
+            rel="stylesheet"
+        />
+        <link
+            href="https://db.onlinewebfonts.com/c/3871f57c8c6af83dfa0674ee7399cb7d?family=Freakshow"
+            rel="stylesheet"
+        />
+        <link
+            href="https://db.onlinewebfonts.com/c/9eaff79c54f74514f8aae5c27a898a2d?family=GRAPHIC+PSYCHOPATHY"
+            rel="stylesheet"
+        />
+        <link
+            href="https://db.onlinewebfonts.com/c/696afcc0126c52a607d4ac8fb2ce0b90?family=Fishwrapper"
+            rel="stylesheet"
+        />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>For Real?</title>
+    </head>
+    <body>
+        <div class="background-container">
+            <div class="inputContainer">
+                <div class="container" id="animatedContainer">
+                    <div class="dot"></div>
+                    <div class="light-beam"></div>
+                    <div class="upload-box">
+                        <div class="upload-section">
+                            <div class="content">
+                                <div class="box">
+                                    <img
+                                        src="upload.png"
+                                        id="upload-button"
+                                        class="button-image"
+                                        alt="Upload Button"
+                                        onclick="document.getElementById('file-input').click()"
+                                    />
+
+                                    <!-- Hidden file input element -->
+                                    <input
+                                        type="file"
+                                        id="file-input"
+                                        accept="audio/*"
+                                        onchange="handleFileUpload(this.files)"
+                                        style="display: none"
+                                    />
+
+                                    <!-- Display area for the uploaded file name -->
+                                    <div id="file-info" style="display: none">
+                                        <p id="file-name"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Animation loading shits -->
+                        <div id="loading" class="loading" style="display: none">
+                            <div class="loader">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                                <div class="bar4"></div>
+                                <div class="bar5"></div>
+                                <div class="bar6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- UPDATE: ADD FB Links -->
+            <!-- <button id="info-button">i</button> -->
+            <div id="info-popup">
+                <!-- <p>
+                    For Real?: A Hybrid Approach to Audio Deepfake Detection in
+                    Noisy Real-World Environments
+                </p>
+                <p class="authors">
+                    <a
+                        href="https://www.facebook.com/allencarl.delasalas/"
+                        target="_blank"
+                        >Delas Alas</a
+                    >
+                    |
+                    <a href="https://www.facebook.com/einahji" target="_blank"
+                        >Iraga</a
+                    >
+                    |
+                    <a href="https://www.facebook.com/CJPaRoChA" target="_blank"
+                        >Parocha</a
+                    >
+                    |
+                    <a
+                        href="https://www.facebook.com/hyejooooooooo"
+                        target="_blank"
+                        >San Jose</a
+                    >
+                </p> -->
+            </div>
+            <!------------------------------------------------------------------------------ ADDITION: MODEL PICKER PART ----------------------------------------------->
+            <!-- <div class="fixed-top-right">
+                <div class="dropdown">
+                    <h1 class="ModelTitle">
+                        <span class="highlight">Choose a Model:</span>
+                    </h1>
+                    <ul>
+                        <li><b>Base Model </b> by the internet</li>
+                        <li><b>For Real Model</b> by Team 11</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const container = document.getElementById("animatedContainer");
+                const fileInput = document.getElementById("file-input");
+                const fileInfo = document.getElementById("file-info");
+                const fileNameDisplay = document.getElementById("file-name");
+
+                // Handle file upload
+                window.handleFileUpload = (files) => {
+                    if (files.length > 0) {
+                        const fileName = files[0].name;
+                        fileNameDisplay.textContent = fileName;
+                        fileInfo.style.display = "block"; // Show the file name display
+
+                        // Trigger the pull-up animation
+                        container.classList.add("pull-up");
+
+                        // Optionally remove the container after the animation ends
+                        container.addEventListener("animationend", () => {
+                            container.remove();
+                        });
+                    }
+                };
+            });
+            // ito yung script para sa upload ng audio
+            // function handleFileUpload(files) {
+            //     if (files.length > 0) {
+            //         const file = files[0];
+
+            //         // Display the selected file name
+            //         document.getElementById("file-name").textContent = file.name;
+
+            //         // Show file info and hide the upload image button
+            //         document.getElementById("file-info").style.display = "block";
+
+            //         // Hide the upload image
+            //         document.getElementById("upload-button").style.display = "none";
+
+            //         // Show the predict button
+            //         document.getElementById("predict-button").style.display = "inline-block";
+            //     }
+            // }
+
+            // ito yung pag clear ng file if na miss click lang yung audio file
+            function clearFile() {
+                document.getElementById("file-input").value = "";
+                document.getElementById("file-info").style.display = "none";
+                document.getElementById("upload-button").style.display =
+                    "inline-block";
+                document.getElementById("predict-button").style.display =
+                    "none";
+            }
+            // ito naman yung predict button pwede mo to laruin para mag connect sa model na pag na click to mag rurun yung model
+            function predict() {
+                document.getElementById("upload-section").style.display =
+                    "none";
+                document.getElementById("prediction-result").style.display =
+                    "block";
+            }
+
+            function resetPage() {
+                document.getElementById("file-input").value = "";
+                document.getElementById("file-info").style.display = "none";
+                document.getElementById("predict-button").style.display =
+                    "none";
+                document.getElementById("prediction-result").style.display =
+                    "none";
+                document.getElementById("upload-section").style.display =
+                    "block";
+                document.getElementById("upload-button").style.display =
+                    "inline-block";
+            }
+            // UPDATED: Add more info
+            const infoButton = document.getElementById("info-button");
+            const infoPopup = document.getElementById("info-popup");
+            const moreInfoBtn = document.getElementById("moreInfo-btn");
+            const mInfoPop = document.getElementById("mInfoPop");
+            const closeButtons = document.querySelectorAll(".close-btn");
+
+            // Create a new div for the blur overlay
+            const blurOverlay = document.createElement("div");
+            blurOverlay.classList.add("blur-overlay");
+            document.body.appendChild(blurOverlay);
+
+            function toggleVisibility(element) {
+                if (
+                    element.style.display === "none" ||
+                    element.style.display === ""
+                ) {
+                    element.style.display = "block";
+                    blurOverlay.style.display = "block"; // Show blur overlay
+                } else {
+                    element.style.display = "none";
+                    blurOverlay.style.display = "none"; // Hide blur overlay
+                }
+            }
+
+            infoButton.addEventListener("click", () =>
+                toggleVisibility(infoPopup),
+            );
+            moreInfoBtn.addEventListener("click", () =>
+                toggleVisibility(mInfoPop),
+            );
+
+            closeButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const popup = button.closest(".popup");
+                    if (popup) {
+                        popup.style.display = "none";
+                        blurOverlay.style.display = "none"; // Hide blur overlay
+                    }
+                });
+            });
+
+            // Close popup when clicking on blur overlay
+            blurOverlay.addEventListener("click", () => {
+                infoPopup.style.display = "none";
+                mInfoPop.style.display = "none";
+                blurOverlay.style.display = "none";
+            });
+
+            // ito yung loading shits para may konting dating habang na loload yung model ng prediction nya
+            function predict() {
+                // Show loading animation
+                document.getElementById("loading").style.display = "block";
+                document.getElementById("upload-section").style.display =
+                    "none";
+
+                // Simulate prediction process (replace with actual prediction logic)
+                setTimeout(function () {
+                    // Hide loading animation
+                    document.getElementById("loading").style.display = "none";
+
+                    // Show prediction result
+                    document.getElementById("prediction-result").style.display =
+                        "block";
+                }, 2000); // Adjust the timeout duration as needed
+            }
+            // ADDITION: SCRIPT of MODEL picker
+            $(document).ready(function () {
+                $(".dropdown ul li").click(function () {
+                    $(".dropdown ul li").each(function () {
+                        if ($(this).hasClass("selected")) {
+                            $(this).removeClass("selected");
+                        }
+                    });
+                    $(this).addClass("selected");
+                    $(".dropdown h1")
+                        .html($(this).html())
+                        .removeClass()
+                        .addClass("selected-" + ($(this).index() + 1));
+                });
+            });
+        </script>
+    </body>
+</html>

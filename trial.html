@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Animation Example</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+
+            .container {
+                width: 200px;
+                height: 100px;
+                background-color: #3498db;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                position: relative;
+                animation: drop 0.8s forwards;
+            }
+
+            @keyframes drop {
+                from {
+                    transform: translateY(-100vh);
+                }
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            .pull-up {
+                animation: pullUp 0.5s forwards;
+            }
+
+            @keyframes pullUp {
+                to {
+                    transform: translateY(-100vh);
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="animatedContainer">Click Me</div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("animatedContainer");
+
+            container.addEventListener("click", () => {
+                container.classList.add("pull-up");
+                // Optionally remove the element after the animation ends
+                container.addEventListener("animationend", () => {
+                    container.remove();
+                });
+            });
+        });
+    </script>
+</html>

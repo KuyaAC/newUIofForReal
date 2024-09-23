@@ -1,0 +1,1106 @@
+/* COPY PASTE MO NALANG ITOOOOO */
+
+/* Import font used */
+@import url(https://db.onlinewebfonts.com/c/b726729b4c955cc38d78cfea835f7d98?family=CF+Anarchy+Regular);
+@import url(https://db.onlinewebfonts.com/c/982eef02eaef7b6dc99e02380f2c201c?family=Diediedie);
+@import url(https://db.onlinewebfonts.com/c/3871f57c8c6af83dfa0674ee7399cb7d?family=Freakshow);
+@import url(https://db.onlinewebfonts.com/c/9eaff79c54f74514f8aae5c27a898a2d?family=GRAPHIC+PSYCHOPATHY);
+@import url(https://db.onlinewebfonts.com/c/696afcc0126c52a607d4ac8fb2ce0b90?family=Fishwrapper);
+
+@font-face {
+    font-family: "CF Anarchy Regular";
+    src: url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/b726729b4c955cc38d78cfea835f7d98.svg#CF Anarchy Regular")
+            format("svg");
+}
+@font-face {
+    font-family: "Diediedie";
+    src: url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/982eef02eaef7b6dc99e02380f2c201c.svg#Diediedie")
+            format("svg");
+}
+@font-face {
+    font-family: "Freakshow";
+    src: url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/3871f57c8c6af83dfa0674ee7399cb7d.svg#Freakshow")
+            format("svg");
+}
+
+@font-face {
+    font-family: "GRAPHIC PSYCHOPATHY";
+    src: url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/9eaff79c54f74514f8aae5c27a898a2d.svg#GRAPHIC PSYCHOPATHY")
+            format("svg");
+}
+@font-face {
+    font-family: "Fishwrapper";
+    src: url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.svg#Fishwrapper")
+            format("svg");
+}
+
+/* Web content */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.inputContainer {
+    width: 90%;
+    height: 100%;
+    max-width: 400px; /* Adjust as needed */
+    max-height: 600px; /* Adjust as needed */
+    background-image: url("containerBg.png"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* background-color: transparent; */
+    /* transform: rotate(4deg); */
+}
+.upload-box {
+    background-color: transparent;
+    /* padding: 5px; */
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    /* z-index: 1; */
+    width: 90%; /* Ensure full width within container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+.button {
+    background-color: #000;
+    color: white;
+    border: 2px solid #fff;
+    padding: 8px 70px;
+    font-size: 36px;
+    border-radius: 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    font-family: "Diediedie";
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #000;
+}
+#file-input {
+    display: none;
+}
+#file-info {
+    margin-top: 20px;
+}
+#clear-button {
+    background-color: transparent;
+    color: #ff4136;
+    border: 1px solid #ff4136;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+#clear-button:hover {
+    background-color: #ff4136;
+    color: white;
+}
+#prediction-result {
+    display: none;
+    position: relative;
+    width: 100%; /* Match width of upload-box */
+}
+.result-box {
+    background-color: transparent;
+    padding: 18px; /* Match padding of upload-box */
+    border-radius: 10px;
+    /* border: 2px solid rgba(255, 255, 255, 0.2); */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    height: 100%; /* Ensure full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.foreal {
+    /* font-size: 45px; */
+    font-weight: bold;
+    /* max-width: 1000px; */
+    /* font-family: "CF Anarchy Regular"; */
+    font-family: "GRAPHIC PSYCHOPATHY";
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.questionM {
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0;
+    font-family: "Freakshow";
+    /* margin-bottom: 5px; */
+}
+#prediction-percentage {
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-family: "Freakshow";
+}
+.prediction-text {
+    font-size: 18px;
+    width: 90%;
+    font-family: "Fishwrapper";
+    padding-left: 10px;
+    padding-right: 10px;
+    /* padding-left: 10px;
+      padding-right: 10px;
+      justify-content: center;
+      text-align: center; */
+}
+.highlight {
+    color: #ff4136; /* Base color */
+    text-shadow:
+        0 0 15px #c70039,
+        0 0 25px #c70039,
+        0 0 35px #c70039,
+        0 0 35px #c70039;
+}
+
+.reset-button {
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    background-color: #ff4136;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+.reset-button:hover {
+    background-color: white;
+    color: #ff4136;
+}
+#moreInfo-btn {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    background-color: #ff4136;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+#moreInfo-btn:hover {
+    background-color: white;
+    color: #ff4136;
+}
+#info-button {
+    background-color: white;
+    color: #ff4136;
+}
+.light-beam {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 1%
+    );
+    pointer-events: none;
+}
+#file-info,
+#predict-button,
+#prediction-result {
+    display: none; /* Hide these elements initially */
+}
+/* Background image for laptops and desktops(for responsiveness) */
+@media only screen and (min-width: 1024px) {
+    .background-container {
+        background-image: url("LaptopBg.png");
+    }
+}
+
+/* Background image for iPads/tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .background-container {
+        background-image: url("ipadBg.png");
+    }
+}
+
+/* Background image for mobile devices */
+@media only screen and (max-width: 767px) {
+    .background-container {
+        background-image: url("mobileBg.png");
+    }
+    .inputContainer {
+        max-width: 350px; /* Adjust as needed */
+        max-height: 500px; /* Adjust as needed */
+    }
+    .prediction-text {
+        width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+#info-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Fishwrapper", sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+#info-button:hover {
+    background-color: white;
+    color: #ff4136;
+}
+.blur-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9998;
+}
+#mInfoPop {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    z-index: 9999;
+}
+
+#mInfoPop p {
+    margin: 0 0 10px 0;
+}
+
+#mInfoPop {
+    color: black;
+    font-size: 0.9em;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px; /* Increased font size */
+    width: 30px; /* Set a specific width */
+    height: 30px; /* Set a specific height */
+    line-height: 30px; /* Center the X vertically */
+    text-align: center; /* Center the X horizontally */
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 50%; /* Make it circular */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#info-popup {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    z-index: 9999;
+}
+#info-popup p {
+    margin: 0 0 10px 0;
+}
+#info-popup {
+    color: black;
+    font-size: 0.9em;
+}
+.authors a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from the parent element */
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease; /* Smooth transition for color and shadow */
+}
+
+.authors a:hover {
+    color: #ff0000; /* Red color on hover */
+    text-shadow: 0 0 8px #ff0000; /* Red glowing effect */
+}
+/******************************************************** Animation Part ***************************************************************************/
+
+.hero {
+    font-size: clamp(40px, 40vw, 50px);
+    /* line-height: 1; */
+    display: inline-block;
+    color: #fff;
+    z-index: 2;
+    letter-spacing: 5px;
+    /* Bright things in dark environments usually cast that light, giving off a glow */
+    filter: drop-shadow(0 1px 3px);
+}
+
+.demo {
+    height: 100px;
+    background: #fff;
+}
+
+.layers {
+    position: relative;
+}
+
+.layers::before,
+.layers::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 110%;
+    z-index: -1;
+}
+
+.layers::before {
+    top: 10px;
+    left: 15px;
+    color: #e0287d;
+}
+
+.layers::after {
+    top: 5px;
+    left: -10px;
+    color: #1bc7fb;
+}
+
+.single-path {
+    clip-path: polygon(
+        0% 12%,
+        53% 12%,
+        53% 26%,
+        25% 26%,
+        25% 86%,
+        31% 86%,
+        31% 0%,
+        53% 0%,
+        53% 84%,
+        92% 84%,
+        92% 82%,
+        70% 82%,
+        70% 29%,
+        78% 29%,
+        78% 65%,
+        69% 65%,
+        69% 66%,
+        77% 66%,
+        77% 45%,
+        85% 45%,
+        85% 26%,
+        97% 26%,
+        97% 28%,
+        84% 28%,
+        84% 34%,
+        54% 34%,
+        54% 89%,
+        30% 89%,
+        30% 58%,
+        83% 58%,
+        83% 5%,
+        68% 5%,
+        68% 36%,
+        62% 36%,
+        62% 1%,
+        12% 1%,
+        12% 34%,
+        60% 34%,
+        60% 57%,
+        98% 57%,
+        98% 83%,
+        1% 83%,
+        1% 53%,
+        91% 53%,
+        91% 84%,
+        8% 84%,
+        8% 83%,
+        4% 83%
+    );
+}
+
+.paths {
+    animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+    0% {
+        clip-path: polygon(
+            0% 43%,
+            83% 43%,
+            83% 22%,
+            23% 22%,
+            23% 24%,
+            91% 24%,
+            91% 26%,
+            18% 26%,
+            18% 83%,
+            29% 83%,
+            29% 17%,
+            41% 17%,
+            41% 39%,
+            18% 39%,
+            18% 82%,
+            54% 82%,
+            54% 88%,
+            19% 88%,
+            19% 4%,
+            39% 4%,
+            39% 14%,
+            76% 14%,
+            76% 52%,
+            23% 52%,
+            23% 35%,
+            19% 35%,
+            19% 8%,
+            36% 8%,
+            36% 31%,
+            73% 31%,
+            73% 16%,
+            1% 16%,
+            1% 56%,
+            50% 56%,
+            50% 8%
+        );
+    }
+
+    5% {
+        clip-path: polygon(
+            0% 29%,
+            44% 29%,
+            44% 83%,
+            94% 83%,
+            94% 56%,
+            11% 56%,
+            11% 64%,
+            94% 64%,
+            94% 70%,
+            88% 70%,
+            88% 32%,
+            18% 32%,
+            18% 96%,
+            10% 96%,
+            10% 62%,
+            9% 62%,
+            9% 84%,
+            68% 84%,
+            68% 50%,
+            52% 50%,
+            52% 55%,
+            35% 55%,
+            35% 87%,
+            25% 87%,
+            25% 39%,
+            15% 39%,
+            15% 88%,
+            52% 88%
+        );
+    }
+
+    30% {
+        clip-path: polygon(
+            0% 53%,
+            93% 53%,
+            93% 62%,
+            68% 62%,
+            68% 37%,
+            97% 37%,
+            97% 89%,
+            13% 89%,
+            13% 45%,
+            51% 45%,
+            51% 88%,
+            17% 88%,
+            17% 54%,
+            81% 54%,
+            81% 75%,
+            79% 75%,
+            79% 76%,
+            38% 76%,
+            38% 28%,
+            61% 28%,
+            61% 12%,
+            55% 12%,
+            55% 62%,
+            68% 62%,
+            68% 51%,
+            0% 51%,
+            0% 92%,
+            63% 92%,
+            63% 4%,
+            65% 4%
+        );
+    }
+
+    45% {
+        clip-path: polygon(
+            0% 33%,
+            2% 33%,
+            2% 69%,
+            58% 69%,
+            58% 94%,
+            55% 94%,
+            55% 25%,
+            33% 25%,
+            33% 85%,
+            16% 85%,
+            16% 19%,
+            5% 19%,
+            5% 20%,
+            79% 20%,
+            79% 96%,
+            93% 96%,
+            93% 50%,
+            5% 50%,
+            5% 74%,
+            55% 74%,
+            55% 57%,
+            96% 57%,
+            96% 59%,
+            87% 59%,
+            87% 65%,
+            82% 65%,
+            82% 39%,
+            63% 39%,
+            63% 92%,
+            4% 92%,
+            4% 36%,
+            24% 36%,
+            24% 70%,
+            1% 70%,
+            1% 43%,
+            15% 43%,
+            15% 28%,
+            23% 28%,
+            23% 71%,
+            90% 71%,
+            90% 86%,
+            97% 86%,
+            97% 1%,
+            60% 1%,
+            60% 67%,
+            71% 67%,
+            71% 91%,
+            17% 91%,
+            17% 14%,
+            39% 14%,
+            39% 30%,
+            58% 30%,
+            58% 11%,
+            52% 11%,
+            52% 83%,
+            68% 83%
+        );
+    }
+
+    76% {
+        clip-path: polygon(
+            0% 26%,
+            15% 26%,
+            15% 73%,
+            72% 73%,
+            72% 70%,
+            77% 70%,
+            77% 75%,
+            8% 75%,
+            8% 42%,
+            4% 42%,
+            4% 61%,
+            17% 61%,
+            17% 12%,
+            26% 12%,
+            26% 63%,
+            73% 63%,
+            73% 43%,
+            90% 43%,
+            90% 67%,
+            50% 67%,
+            50% 41%,
+            42% 41%,
+            42% 46%,
+            50% 46%,
+            50% 84%,
+            96% 84%,
+            96% 78%,
+            49% 78%,
+            49% 25%,
+            63% 25%,
+            63% 14%
+        );
+    }
+
+    90% {
+        clip-path: polygon(
+            0% 41%,
+            13% 41%,
+            13% 6%,
+            87% 6%,
+            87% 93%,
+            10% 93%,
+            10% 13%,
+            89% 13%,
+            89% 6%,
+            3% 6%,
+            3% 8%,
+            16% 8%,
+            16% 79%,
+            0% 79%,
+            0% 99%,
+            92% 99%,
+            92% 90%,
+            5% 90%,
+            5% 60%,
+            0% 60%,
+            0% 48%,
+            89% 48%,
+            89% 13%,
+            80% 13%,
+            80% 43%,
+            95% 43%,
+            95% 19%,
+            80% 19%,
+            80% 85%,
+            38% 85%,
+            38% 62%
+        );
+    }
+
+    1%,
+    7%,
+    33%,
+    47%,
+    78%,
+    93% {
+        clip-path: none;
+    }
+}
+
+.movement {
+    /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+    position: relative;
+    animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+    0% {
+        top: 0px;
+        left: -20px;
+    }
+
+    15% {
+        top: 10px;
+        left: 10px;
+    }
+
+    60% {
+        top: 5px;
+        left: -10px;
+    }
+
+    75% {
+        top: -5px;
+        left: 20px;
+    }
+
+    100% {
+        top: 10px;
+        left: 5px;
+    }
+}
+
+.opacity {
+    animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0.1;
+    }
+
+    5% {
+        opacity: 0.7;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    45% {
+        opacity: 0.6;
+    }
+
+    76% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    1%,
+    7%,
+    33%,
+    47%,
+    78%,
+    93% {
+        opacity: 0;
+    }
+}
+
+.font {
+    animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+    0% {
+        font-weight: 100;
+        color: #e0287d;
+        filter: blur(3px);
+    }
+
+    20% {
+        font-weight: 500;
+        color: #fff;
+        filter: blur(0);
+    }
+
+    50% {
+        font-weight: 300;
+        color: #1bc7fb;
+        filter: blur(2px);
+    }
+
+    60% {
+        font-weight: 700;
+        color: #fff;
+        filter: blur(0);
+    }
+
+    90% {
+        font-weight: 500;
+        color: #e0287d;
+        filter: blur(6px);
+    }
+}
+
+.glitch span {
+    animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+    animation:
+        paths 5s step-end infinite,
+        opacity 5s step-end infinite,
+        font 8s step-end infinite,
+        movement 10s step-end infinite;
+}
+
+.glitch::after {
+    animation:
+        paths 5s step-end infinite,
+        opacity 5s step-end infinite,
+        font 7s step-end infinite,
+        movement 8s step-end infinite;
+}
+
+.hero-container {
+    position: relative;
+    /* padding: 200px 0; */
+    text-align: center;
+}
+
+/* .environment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  filter: blur(5px);
+  background: url(https://images.unsplash.com/photo-1602136773736-34d445b989cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80)
+    center no-repeat;
+  background-size: cover;
+} */
+
+/******************************************************************** LOADING ANIMATION **********************************************************/
+body,
+html {
+    background-color: #1c2020;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader {
+    margin: 0 auto;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+
+    > div {
+        height: 100%;
+        width: 8px;
+        display: inline-block;
+        float: left;
+        margin-left: 2px;
+        -webkit-animation: delay 0.8s infinite ease-in-out;
+        animation: delay 0.8s infinite ease-in-out;
+    }
+
+    .bar1 {
+        background-color: white;
+    }
+    .bar2 {
+        background-color: white;
+        -webkit-animation-delay: -0.7s;
+        animation-delay: -0.7s;
+    }
+    .bar3 {
+        background-color: white;
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+    }
+    .bar4 {
+        background-color: white;
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+    }
+    .bar5 {
+        background-color: white;
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+    }
+    .bar6 {
+        background-color: white;
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+    }
+}
+
+@-webkit-keyframes delay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.05);
+    }
+    20% {
+        -webkit-transform: scaleY(1);
+    }
+}
+
+@keyframes delay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.05);
+        -webkit-transform: scaleY(0.05);
+    }
+    20% {
+        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+    }
+}
+
+/*************************************************************************** MODEL PICKER ****************************************************************/
+.fixed-top-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-family: "Fishwrapper";
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.dropdown {
+    margin: 0px auto;
+    width: 260px;
+}
+
+.dropdown:hover li {
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.dropdown h1 {
+    display: block;
+    padding: 20px 0px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.5s linear 0s;
+    margin: 0;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
+    background: darken(#333, 2%);
+    color: darken(#eee, 40%);
+    text-align: left;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition-property: all, background-color;
+    transition-duration: 0.2s, 0.4s;
+}
+
+.dropdown li:hover,
+.dropdown li.selected {
+    background-color: darken(#333, 4%);
+}
+
+/* Transition delays for list items */
+.dropdown li:nth-child(1) {
+    transition-delay: 0s, 0s;
+}
+.dropdown li:nth-child(2) {
+    transition-delay: 0.1s, 0s;
+}
+.dropdown li:nth-child(3) {
+    transition-delay: 0.2s, 0s;
+}
+.dropdown li:nth-child(4) {
+    transition-delay: 0.3s, 0s;
+}
+.dropdown li:nth-child(5) {
+    transition-delay: 0.4s, 0s;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ POP UP MODEL MORE DETAILS ******************************************************/
