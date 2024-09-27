@@ -86,46 +86,105 @@
                         </div>
                     </div>
                 </div>
+                <div class="containerI" id="animatedContainerI" style="display: none;">
+                    <div class="dot1"></div>
+                    <div class="light-beam"></div>
+                    <div class="info-box">
+                        <div class="info-section">
+                            <div class="contentI">
+                                <div class="box">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewInfo"><a class="arrow arrow-right" title="Model Information"></a>
+                </div>
+                <div id="info-button-container">
+                        <button id="info-button">i</button>
+                        <div id="switch-model-container">
+                            <span>Switch Models</span>
+                            <label class="switch">
+                                <input type="checkbox" id="model-switch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
             </div>
         </div>
     </body>
      <script>
+     document.addEventListener("DOMContentLoaded", () => {
+       const container = document.getElementById("animatedContainer");
+       const containerP = document.getElementById("animatedContainerP");
+       const containerI = document.getElementById("animatedContainerI");
+       const fileInput = document.getElementById("file-input");
+       const fileInfo = document.getElementById("file-info");
+       const fileNameDisplay = document.getElementById("file-name");
+       const viewInfoButton = document.querySelector(".viewInfo");
+       const arrow = viewInfoButton.querySelector(".arrow");
 
-        document.addEventListener("DOMContentLoaded", () => {
-          const container = document.getElementById("animatedContainer");
-          const containerP = document.getElementById("animatedContainerP");
-          const fileInput = document.getElementById("file-input");
-          const fileInfo = document.getElementById("file-info");
-          const fileNameDisplay = document.getElementById("file-name");
+       let currentContainer = container;
 
-          // Handle file upload
-          window.handleFileUpload = (files) => {
-            if (files.length > 0) {
-              const fileName = files[0].name;
-              fileNameDisplay.textContent = fileName;
-              fileInfo.style.display = "block"; // Show the file name display
+       // Handle file upload
+       window.handleFileUpload = (files) => {
+         if (files.length > 0) {
+           const fileName = files[0].name;
+           fileNameDisplay.textContent = fileName;
+           fileInfo.style.display = "block";
 
-              // Trigger the pull-up animation
-              container.classList.add("pull-up");
+           container.classList.add("pull-up");
 
-              // Add animationend listener
-              container.addEventListener("animationend", () => {
-                container.remove(); // Remove container after animation ends
+           container.addEventListener("animationend", () => {
+             container.style.display = "none";
+             setTimeout(() => {
+               containerP.style.display = "block";
+               containerP.classList.add("show");
+               currentContainer = containerP;
+             }, 100);
+           }, { once: true });
+         }
+       };
 
-                // Delay showing containerP by 1.5 seconds
-                setTimeout(() => {
-                  containerP.style.display = "block"; // Show the containerP
-                  containerP.classList.add("show"); // Trigger the show animation
-                }, 100); // 1.5 second delay
-              });
-            }
-          };
+       // Add event listener to the file input
+       fileInput.addEventListener("change", () => {
+         handleFileUpload(fileInput.files);
+       });
 
-          // Add event listener to the file input
-          fileInput.addEventListener("change", () => {
-            handleFileUpload(fileInput.files);
-          });
-        });
+       // Handle view info button click
+       viewInfoButton.addEventListener("click", () => {
+         if (arrow.classList.contains("arrow-right")) {
+           // Hide current container and show containerI
+           currentContainer.style.display = "none";
+           containerI.style.display = "block";
+           containerI.classList.add("show");
+           arrow.classList.remove("arrow-right");
+           arrow.classList.add("arrow-left");
+           arrow.setAttribute("title", "Back to Upload/Predict");
+         } else {
+           // Hide containerI and show previous container
+           containerI.style.display = "none";
+           containerI.classList.remove("show");
+           currentContainer.style.display = "block";
+           arrow.classList.remove("arrow-left");
+           arrow.classList.add("arrow-right");
+           arrow.setAttribute("title", "Model Information");
+         }
+       });
+     });
+
+     // SWITCH MODEL
+     const infoButton = document.getElementById('info-button');
+             const switchModelContainer = document.getElementById('switch-model-container');
+             const modelSwitch = document.getElementById('model-switch');
+
+             infoButton.addEventListener('click', () => {
+                 switchModelContainer.classList.toggle('visible');
+             });
+
+             modelSwitch.addEventListener('change', () => {
+                 console.log('Model switched:', modelSwitch.checked);
+             });
 
         </script>
     </body>
