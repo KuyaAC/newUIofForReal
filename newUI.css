@@ -18,7 +18,6 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("newBG.png");
 }
 .content {
     text-align: center;
@@ -134,7 +133,7 @@ html {
     height: 70%;
     max-width: 100%;
     max-height: 100%;
-    background-image: url("predict.png");
+    background-image: url("swing.png");
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
@@ -153,7 +152,7 @@ html {
     height: 70%;
     max-width: 100%;
     max-height: 100%;
-    background-image: url("info.png");
+    background-image: url("swing.png");
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
@@ -269,22 +268,18 @@ html {
     top: 50%;
     cursor: pointer;
 }
-
 .arrow:hover {
     box-shadow: 2px -2px 0 2px white inset;
     -webkit-box-shadow: 6px -6px white inset;
 }
-
 .arrow-right {
     right: 0;
     transform: translateY(-50%) rotate(225deg);
 }
-
 .arrow-left {
     left: 0;
     transform: translateY(-50%) rotate(45deg);
 }
-
 /* SWITCH MODEL */
 
 #info-button-container {
@@ -368,4 +363,180 @@ input:checked + .slider:before {
 
 #switch-model-container.visible {
     display: flex;
+}
+
+/* RESPONSIVENESS PART */
+/* Background image for laptops and desktops(for responsiveness) */
+@media only screen and (min-width: 1024px) {
+    .background-container {
+        background-image: url("newBG.png");
+    }
+}
+
+/* Background image for iPads/tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .background-container {
+        background-image: url("ipadBg.png");
+    }
+    .upload-box {
+        position: absolute;
+        left: 15%;
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 70%;
+        height: 70%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("swing.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    .predict-box {
+        position: absolute;
+        left: 15%;
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 70%;
+        height: 70%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("predict.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .info-box {
+        position: absolute;
+        left: 15%;
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 70%;
+        height: 70%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("info.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    @keyframes drop {
+        0% {
+            transform: translateY(-100vh);
+        }
+        60% {
+            transform: translateY(5%);
+        }
+        80% {
+            transform: translateY(-5%);
+        }
+        100% {
+            transform: rotate(-1.4deg);
+        }
+    }
+    @keyframes swing {
+        from {
+            transform: rotate(3deg);
+        }
+        to {
+            transform: rotate(-1.4deg);
+        }
+    }
+}
+
+/* Background image for mobile devices */
+@media only screen and (max-width: 767px) {
+    .background-container {
+        background-image: url("mobileBg.png");
+    }
+    .upload-box {
+        position: absolute;
+        left: 22.5%;
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 55%;
+        height: 67%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("swing.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    .predict-box {
+        position: absolute;
+        left: 22.5%;
+        width: 400px;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 55%;
+        height: 67%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("predict.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .info-box {
+        position: absolute;
+        left: 22.5%;
+        width: 400px;
+        height: 900px;
+        overflow: hidden;
+        border-radius: 0.3rem;
+        width: 55%;
+        height: 67%;
+        max-width: 100%;
+        max-height: 100%;
+        background-image: url("info2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    @keyframes drop {
+        0% {
+            transform: translateY(-100vh);
+        }
+        60% {
+            transform: translateY(5%);
+        }
+        80% {
+            transform: translateY(-5%);
+        }
+        100% {
+            transform: rotate(-1deg);
+        }
+    }
+    @keyframes swing {
+        from {
+            transform: rotate(2deg);
+        }
+        to {
+            transform: rotate(-1deg);
+        }
+    }
 }
