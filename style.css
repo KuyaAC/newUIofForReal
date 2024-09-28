@@ -222,9 +222,6 @@ html {
 }
 #prediction-percentage {
     font-size: 55px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0px;
     font-family: "Freakshow";
 }
 .prediction-text {
@@ -233,10 +230,6 @@ html {
     font-family: "Fishwrapper";
     padding-left: 10px;
     padding-right: 10px;
-    /* padding-left: 10px;
-      padding-right: 10px;
-      justify-content: center;
-      text-align: center; */
 }
 .highlight {
     color: #ff4136; /* Base color */

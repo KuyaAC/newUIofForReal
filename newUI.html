@@ -4,26 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="newUI.css" />
-        <link
-            href="https://db.onlinewebfonts.com/c/b726729b4c955cc38d78cfea835f7d98?family=CF+Anarchy+Regular"
-            rel="stylesheet"
-        />
-        <link
-            href="https://db.onlinewebfonts.com/c/982eef02eaef7b6dc99e02380f2c201c?family=Diediedie"
-            rel="stylesheet"
-        />
-        <link
-            href="https://db.onlinewebfonts.com/c/3871f57c8c6af83dfa0674ee7399cb7d?family=Freakshow"
-            rel="stylesheet"
-        />
-        <link
-            href="https://db.onlinewebfonts.com/c/9eaff79c54f74514f8aae5c27a898a2d?family=GRAPHIC+PSYCHOPATHY"
-            rel="stylesheet"
-        />
-        <link
-            href="https://db.onlinewebfonts.com/c/696afcc0126c52a607d4ac8fb2ce0b90?family=Fishwrapper"
-            rel="stylesheet"
-        />
+        <link href="https://db.onlinewebfonts.com/c/3d73cd0279f4c3db9b4f7db0305164f6?family=RansomNote" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/death-note-font" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>For Real?</title>
     </head>
@@ -82,6 +64,20 @@
                             <div class="contentP">
                                 <div class="box">
                                 </div>
+                                <img class="imageBasedOnModel" src="propose.png">
+                                <p id="prediction-percentage">
+                                    <span>98.30</span>
+                                </p>
+                                <p class="prediction-text">
+                                    There is a 98.30 chance that your audio is deepfake</span>
+                                </p>
+                                <img
+                                    src="reupload.png"
+                                    id="reupload-button"
+                                    class="reuploadBtn"
+                                    alt="Reupload Button"
+                                    onclick="handleReupload()"
+                                />
                             </div>
                         </div>
                     </div>
@@ -115,16 +111,16 @@
     </body>
      <script>
      document.addEventListener("DOMContentLoaded", () => {
-       const container = document.getElementById("animatedContainer");
-       const containerP = document.getElementById("animatedContainerP");
-       const containerI = document.getElementById("animatedContainerI");
-       const fileInput = document.getElementById("file-input");
-       const fileInfo = document.getElementById("file-info");
-       const fileNameDisplay = document.getElementById("file-name");
-       const viewInfoButton = document.querySelector(".viewInfo");
-       const arrow = viewInfoButton.querySelector(".arrow");
+                 const container = document.getElementById("animatedContainer");
+                 const containerP = document.getElementById("animatedContainerP");
+                 const containerI = document.getElementById("animatedContainerI");
+                 const fileInput = document.getElementById("file-input");
+                 const fileInfo = document.getElementById("file-info");
+                 const fileNameDisplay = document.getElementById("file-name");
+                 const viewInfoButton = document.querySelector(".viewInfo");
+                 const arrow = viewInfoButton.querySelector(".arrow");
 
-       let currentContainer = container;
+                 let currentContainer = container;
 
        // Handle file upload
        window.handleFileUpload = (files) => {
@@ -150,6 +146,20 @@
        fileInput.addEventListener("change", () => {
          handleFileUpload(fileInput.files);
        });
+
+       // Add this new function to handle reupload
+        window.handleReupload = () => {
+            containerP.style.display = "none";
+            containerP.classList.remove("show");
+            container.style.display = "block";
+            container.classList.remove("pull-up");
+            currentContainer = container;
+
+            // Reset file input and info
+            fileInput.value = "";
+            fileInfo.style.display = "none";
+            fileNameDisplay.textContent = "";
+        };
 
        // Handle view info button click
        viewInfoButton.addEventListener("click", () => {
