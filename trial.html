@@ -3,66 +3,130 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Animation Example</title>
+        <title>Deepfake Audio Detector</title>
         <style>
             body {
+                font-family: "Arial", sans-serif;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
                 margin: 0;
-                background-color: #f0f0f0;
+                background-color: #d1d1d1;
             }
-
             .container {
-                width: 200px;
-                height: 100px;
-                background-color: #3498db;
-                color: white;
+                background-color: #e0e0e0;
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                color: #333;
+                width: 350px; /* Made the container width tighter */
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                border-radius: 10px;
                 position: relative;
-                animation: drop 0.8s forwards;
             }
-
-            @keyframes drop {
-                from {
-                    transform: translateY(-100vh);
-                }
-                to {
-                    transform: translateY(0);
-                }
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: red;
+                border-radius: 50%;
+                width: 22px; /* Scaled up by 8% from 20px */
+                height: 22px;
+                line-height: 22px;
+                text-align: center;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
             }
-
-            .pull-up {
-                animation: pullUp 0.5s forwards;
+            .text-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; /* Center the text horizontally */
             }
-
-            @keyframes pullUp {
-                to {
-                    transform: translateY(-100vh);
-                    opacity: 0;
-                }
+            .label {
+                background-color: white;
+                padding: 10px;
+                border-radius: 15px;
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: black;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                width: 210px; /* Adjusted width for a tighter fit */
+                text-align: center; /* Center the text inside each label */
+                width: 250px;
+            }
+            .progress-container {
+                width: 40px;
+                height: 250px;
+                background-color: #f0f0f0;
+                border-radius: 25px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .progress-bar {
+                width: 100%;
+                background-color: #ff4136;
+                position: absolute;
+                bottom: 0;
+                transition: height 0.5s ease-in-out;
+            }
+            .threshold-line {
+                width: 100%;
+                height: 2px;
+                background-color: black;
+                position: absolute;
+                bottom: 89%;
+            }
+            .result {
+                background-color: white;
+                padding: 10px;
+                border-radius: 15px;
+                font-size: 16px;
+                color: black;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                width: 250px; /* Adjusted width for a tighter fit */
+                text-align: center; /* Center the text inside the result container */
             }
         </style>
     </head>
     <body>
-        <div class="container" id="animatedContainer">Click Me</div>
-    </body>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById("animatedContainer");
+        <div class="container">
+            <div class="close-btn">x</div>
+            <div class="text-container">
+                <div class="label">Our Threshold : 0.89</div>
+                <div class="label" id="probability">Probability : 0.00</div>
+                <div class="result" id="result"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="threshold-line"></div>
+            </div>
+        </div>
 
-            container.addEventListener("click", () => {
-                container.classList.add("pull-up");
-                // Optionally remove the element after the animation ends
-                container.addEventListener("animationend", () => {
-                    container.remove();
-                });
-            });
-        });
-    </script>
+        <script>
+            const progressBar = document.getElementById("progressBar");
+            const probabilityDisplay = document.getElementById("probability");
+            const resultDisplay = document.getElementById("result");
+            const threshold = 0.89;
+            const probability = 0.54; // Example probability value
+
+            function updateUI(prob) {
+                progressBar.style.height = `${prob * 100}%`;
+                progressBar.style.backgroundColor =
+                    prob >= threshold ? "#FF4136" : "#4CAF50";
+                probabilityDisplay.textContent = `Probability : ${prob.toFixed(2)}`;
+                resultDisplay.textContent =
+                    prob >= threshold
+                        ? "Your Audio is more likely to be a deepfake audio"
+                        : "Your Audio is more likely to be a bonafide audio";
+            }
+
+            // Initial update
+            updateUI(probability);
+        </script>
+    </body>
 </html>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="newUI.css" />
         <link href="https://fonts.cdnfonts.com/css/death-font" rel="stylesheet">
+        <link href="https://db.onlinewebfonts.com/c/a3cd6762eede2ec51f8999878ddc0b1e?family=CCSoliloquous+W00+Regular+V1" rel="stylesheet">
         <link href="https://db.onlinewebfonts.com/c/3d73cd0279f4c3db9b4f7db0305164f6?family=RansomNote" rel="stylesheet">
         <link href="https://fonts.cdnfonts.com/css/death-note-font" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -63,11 +64,17 @@
                                 </div>
                                 <img class="imageBasedOnModel" src="propose.png">
                                 <p id="prediction-percentage">
-                                    <span>98.30</span>
+                                    <span>Deepfake</span>
+                                    <!-- Bonafide or Deepfake prediction -->
                                 </p>
-                                <p class="prediction-text">
-                                    There is a 98.30 chance that your audio is deepfake</span>
-                                </p>
+                                <div class="prediction-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204 51" width="204" height="51">
+                                      <rect x="0" y="0" width="204" height="51" rx="25.5" ry="25.5" fill="#ef4444" />
+                                      <text x="102" y="31.45" font-family="CCSoliloquous W00 Regular V1" font-size="15" fill="white" text-anchor="middle">More Information</text>
+                                    </svg>
+
+                                    <!-- Change Color when deepfake: #ef4444 and bonafide: #4CAF50 -->
+                                </div>
                                 <img
                                     src="reupload.png"
                                     id="reupload-button"
@@ -75,6 +82,20 @@
                                     alt="Reupload Button"
                                     onclick="handleReupload()"
                                 />
+                            </div>
+                            <div class="popUpMoreInfo">
+                                <div class="containerM">
+                                    <div class="close-btn">x</div>
+                                    <div class="text-container">
+                                        <div class="label">Our Threshold : 0.89</div>
+                                        <div class="label" id="probability">Probability : 0.00</div>
+                                        <div class="result" id="result"></div>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="progressBar"></div>
+                                        <div class="threshold-line"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,15 +119,19 @@
                 <div class="viewInfo"><a class="arrow arrow-right" title="Model Information"></a>
                 </div>
                 <div id="info-button-container">
-                        <button id="info-button">i</button>
-                        <div id="switch-model-container">
-                            <span>Switch Models</span>
+                    <button id="info-button">i</button>
+                    <div id="switch-model-container" style="display: none;">
+                        <span id="switch-model-title">Switch Model</span>
+                        <div id="switch-model-options">
+                            <span>Baseline</span>
                             <label class="switch">
                                 <input type="checkbox" id="model-switch">
                                 <span class="slider"></span>
                             </label>
+                            <span>Proposed</span>
                         </div>
                     </div>
+                </div>
             </div>
             <div id="transition-overlay"></div>
         </div>
@@ -215,15 +240,61 @@
 
      // SWITCH MODEL
      const infoButton = document.getElementById('info-button');
-             const switchModelContainer = document.getElementById('switch-model-container');
-             const modelSwitch = document.getElementById('model-switch');
+         const switchModelContainer = document.getElementById('switch-model-container');
+         const modelSwitch = document.getElementById('model-switch');
 
-             infoButton.addEventListener('click', () => {
-                 switchModelContainer.classList.toggle('visible');
+         infoButton.addEventListener('click', () => {
+             if (switchModelContainer.style.display === 'none') {
+                 switchModelContainer.style.display = 'block';
+             } else {
+                 switchModelContainer.style.display = 'none';
+             }
+         });
+
+         modelSwitch.addEventListener('change', () => {
+             console.log('Model switched:', modelSwitch.checked);
+         });
+
+     // MORE INFO ABOUT MODEL OUTPUT
+     const progressBar = document.getElementById("progressBar");
+     const probabilityDisplay = document.getElementById("probability");
+     const resultDisplay = document.getElementById("result");
+     const threshold = 0.89;
+     const probability = 0.54; ////////////////////////// Example probability value
+
+     function updateUI(prob) {
+         progressBar.style.height = `${prob * 100}%`;
+         progressBar.style.backgroundColor =
+             prob >= threshold ? "#FF4136" : "#4CAF50";
+         probabilityDisplay.textContent = `Probability : ${prob.toFixed(2)}`;
+         resultDisplay.textContent =
+             prob >= threshold
+                 ? "Your Audio is more likely to be a deepfake audio"
+                 : "Your Audio is more likely to be a bonafide audio";
+     }
+
+     // Initial update
+     updateUI(probability);
+
+     // POP UP SHITSSS
+     const moreInfoButton = document.querySelector('.prediction-text svg');
+             const popUpMoreInfo = document.querySelector('.popUpMoreInfo');
+             const closeBtn = document.querySelector('.close-btn');
+             const overlay = document.getElementById('overlay');
+
+             moreInfoButton.addEventListener('click', () => {
+                 popUpMoreInfo.style.display = 'block';
+                 overlay.style.display = 'block';
              });
 
-             modelSwitch.addEventListener('change', () => {
-                 console.log('Model switched:', modelSwitch.checked);
+             closeBtn.addEventListener('click', () => {
+                 popUpMoreInfo.style.display = 'none';
+                 overlay.style.display = 'none';
+             });
+
+             overlay.addEventListener('click', () => {
+                 popUpMoreInfo.style.display = 'none';
+                 overlay.style.display = 'none';
              });
 
         </script>

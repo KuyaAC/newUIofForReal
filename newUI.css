@@ -3,6 +3,7 @@
 @import url(https://db.onlinewebfonts.com/c/696afcc0126c52a607d4ac8fb2ce0b90?family=Fishwrapper);
 @import url("https://fonts.cdnfonts.com/css/death-font");
 @import url(https://db.onlinewebfonts.com/c/c5d9ca934221f82dc295c25078e361ae?family=Ryuk+Extra);
+@import url(https://db.onlinewebfonts.com/c/a3cd6762eede2ec51f8999878ddc0b1e?family=CCSoliloquous+W00+Regular+V1);
 
 @font-face {
     font-family: "Fishwrapper";
@@ -17,6 +18,22 @@
         url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.ttf")
             format("truetype"),
         url("https://db.onlinewebfonts.com/t/696afcc0126c52a607d4ac8fb2ce0b90.svg#Fishwrapper")
+            format("svg");
+}
+
+@font-face {
+    font-family: "CCSoliloquous W00 Regular V1";
+    src: url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.eot");
+    src:
+        url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.eot?#iefix")
+            format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.woff2")
+            format("woff2"),
+        url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.woff")
+            format("woff"),
+        url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.ttf")
+            format("truetype"),
+        url("https://db.onlinewebfonts.com/t/a3cd6762eede2ec51f8999878ddc0b1e.svg#CCSoliloquous W00 Regular V1")
             format("svg");
 }
 
@@ -176,23 +193,16 @@ html {
 
 .imageBasedOnModel {
     transform: scale(0.78);
-    margin-bottom: 0%;
+    bottom: 90%;
 }
 #prediction-percentage {
     font-size: 75px;
-    font-family: "RansomNote";
-    margin-top: 0;
-    margin-bottom: 0;
+    font-family: "Ryuk Extra";
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 .prediction-text {
-    font-size: 20px;
-    font-family: "Fishwrapper";
-    width: 64%;
-    padding-left: 88px;
-    padding-right: 60px;
-    margin-top: 0;
-    margin-bottom: 15%;
-    color: #f80000;
+    margin-bottom: 20%;
 }
 
 /* adjust info section */
@@ -438,9 +448,8 @@ html {
     bottom: 16px;
     display: flex;
     align-items: center;
-    font-family: "Fishwrapper";
+    font-family: sans-serif;
 }
-
 #info-button {
     width: 40px;
     height: 40px;
@@ -457,7 +466,6 @@ html {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-family: "Fishwrapper";
 }
-
 #switch-model-container {
     margin-left: 8px;
     padding: 8px 12px;
@@ -465,18 +473,28 @@ html {
     color: white;
     border-radius: 20px;
     display: none;
+    flex-direction: column;
     align-items: center;
     white-space: nowrap;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
+#switch-model-title {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+}
+#switch-model-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
-    margin-left: 8px;
+    margin: 0 8px;
 }
 .switch input {
     opacity: 0;
@@ -512,7 +530,6 @@ input:checked + .slider:before {
     transform: translateX(20px);
     background-color: white;
 }
-
 #switch-model-container.visible {
     display: flex;
 }
@@ -599,6 +616,108 @@ html {
         transform: scaleY(1);
         -webkit-transform: scaleY(1);
     }
+}
+
+/* MORE INFO ABOUT THE MODEL */
+.popUpMoreInfo {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    font-family: "CCSoliloquous W00 Regular V1";
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.containerM {
+    /* background-color: #e0e0e0; */
+    padding: 20px;
+    border-radius: 35px;
+    border: 8px solid black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* color: #333; */
+    width: 350px; /* Made the container width tighter */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-image: url("moreInfoBG.png");
+    background-size: cover;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    border-radius: 50%;
+    width: 22px; /* Scaled up by 8% from 20px */
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the text horizontally */
+}
+.label {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 210px; /* Adjusted width for a tighter fit */
+    text-align: center; /* Center the text inside each label */
+    width: 250px;
+}
+.progress-container {
+    width: 40px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+    width: 100%;
+    background-color: #ff4136;
+    position: absolute;
+    bottom: 0;
+    transition: height 0.5s ease-in-out;
+}
+.threshold-line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 89%;
+}
+.result {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjusted width for a tighter fit */
+    text-align: center; /* Center the text inside the result container */
 }
 
 /* RESPONSIVENESS PART */
@@ -719,6 +838,9 @@ html {
     .containerI {
         height: 1300px;
     }
+    .imageBasedOnModel {
+        left: 20%;
+    }
 }
 
 /* Background image for mobile devices */
@@ -837,14 +959,14 @@ html {
     .imageBasedOnModel {
         transform: scale(0.62);
         position: absolute;
-        left: 12.5%;
+        left: 7%;
         bottom: 74%;
         align-items: center;
     }
 
     #prediction-percentage {
         font-size: 55px;
-        font-family: "RansomNote";
+        font-family: "Ryuk Extra";
         margin: 0;
         padding: 0;
     }
@@ -919,5 +1041,30 @@ html {
     }
     .containerI {
         height: 1300px;
+    }
+
+    /* popup shit in mobile */
+    .popUpMoreInfo {
+        top: -10%;
+    }
+    .containerM {
+        width: 315px; /* Scaled down by approximately 10% */
+        padding: 18px;
+    }
+    .label,
+    .result {
+        width: 189px; /* Reduced by 10% */
+        font-size: 16px;
+        padding: 9px;
+    }
+    .progress-container {
+        width: 36px; /* Reduced by 10% */
+        height: 225px; /* Reduced by 10% */
+    }
+    .close-btn {
+        width: 20px; /* Scaled down by 10% */
+        height: 20px;
+        font-size: 14px;
+        line-height: 20px;
     }
 }
